@@ -1,0 +1,112 @@
+<!-- favicon -->
+<link rel="shortcut icon" href="src/images/computer.webp" type="image/x-icon" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+  rel="stylesheet"
+/>
+
+<!-- Main CSS and other styles -->
+<link rel="stylesheet" href="src/styles/main.css" />
+
+<!-- Main JavaScript and other scripts -->
+<script src="src/scripts/main.js"></script>
+
+<!-- Main Content -->
+<div id="pc-wrapper" data-theme="light">
+  <!-- HERO -->
+  <div class="pc-hero">
+    <h1>Welcome to Your New Computer</h1>
+    <p>
+      Your Perchance-ready control center for software, diagnostics, and
+      customization.
+    </p>
+    <div>
+      <span class="pc-btn" onclick="pcScroll('#pc-software')">Software</span>
+      <span class="pc-btn" onclick="pcScroll('#pc-diagnostics')"
+        >Diagnostics</span
+      >
+      <span class="pc-btn" onclick="pcScroll('#pc-gallery')">PC Builds</span>
+      <span class="pc-btn" onclick="pcOpenSettings()">⚙ Settings</span>
+    </div>
+  </div>
+
+  <!-- SOFTWARE -->
+  <h2 id="pc-software">Software Hub</h2>
+  <div class="pc-grid">
+    <div class="pc-card" onclick="pcOpen('https://ninite.com/')">
+      <h3>🧰 Essential Software</h3>
+      <p>Browsers, utilities, security tools.</p>
+    </div>
+    <div class="pc-card" onclick="pcOpen('https://code.visualstudio.com/')">
+      <h3>💻 Programming Tools</h3>
+      <p>VS Code, Git, SDKs.</p>
+    </div>
+    <div
+      class="pc-card"
+      onclick="pcOpen('https://store.steampowered.com/about/')"
+    >
+      <h3>🎮 Gaming Software</h3>
+      <p>Steam, drivers, overlays.</p>
+    </div>
+    <div class="pc-card" onclick="pcOpen('https://obsproject.com/')">
+      <h3>📡 Streaming Tools</h3>
+      <p>OBS, recording, overlays.</p>
+    </div>
+  </div>
+
+  <!-- DIAGNOSTICS -->
+  <h2 id="pc-diagnostics" style="margin-top: 40px">System Diagnostics</h2>
+  <div class="pc-diag-grid">
+    <div class="pc-diag-card">
+      CPU Usage: <span class="pc-diag-value" id="pc-cpu">0%</span>
+    </div>
+    <div class="pc-diag-card">
+      GPU Load: <span class="pc-diag-value" id="pc-gpu">0%</span>
+    </div>
+    <div class="pc-diag-card">
+      RAM Usage: <span class="pc-diag-value" id="pc-ram">0%</span>
+    </div>
+    <div class="pc-diag-card">
+      Temp: <span class="pc-diag-value" id="pc-temp">0°C</span>
+    </div>
+  </div>
+  <div style="margin-top: 10px">
+    <span class="pc-btn" onclick="pcRefreshDiag()">Refresh</span>
+  </div>
+
+  <!-- GALLERY -->
+  <h2 id="pc-gallery" style="margin-top: 40px">PC Build Showcase</h2>
+  <div class="pc-gallery-grid">
+    <div class="pc-build-card" data-cat="gaming">
+      <strong>RTX Gaming Beast</strong><br />
+      Ryzen 7 • RTX 4070 • 32GB DDR5
+    </div>
+    <div class="pc-build-card" data-cat="workstation">
+      <strong>Creator Workstation</strong><br />
+      i9 • 64GB RAM • RTX 4080
+    </div>
+    <div class="pc-build-card" data-cat="compact">
+      <strong>Mini-ITX Compact</strong><br />
+      Ryzen 5 • RTX 4060 • SFF Case
+    </div>
+  </div>
+</div>
+
+<!-- SETTINGS PANEL -->
+<div class="pc-overlay" id="pc-overlay" onclick="pcCloseSettings()"></div>
+<div id="pc-settings-panel">
+  <h3>Settings</h3>
+  <label>Theme:</label>
+  <select id="pc-theme">
+    <option value="light">Light</option>
+    <option value="dark">Dark</option>
+    <option value="oled">OLED</option>
+  </select>
+  <br /><br />
+  <span class="pc-btn" onclick="pcApplySettings()">Apply</span>
+  <span class="pc-btn" onclick="pcCloseSettings()">Close</span>
+</div>
