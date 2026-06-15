@@ -1,0 +1,353 @@
+<style>
+  :root {
+    --bg-sand: #e8d9a8;
+    --blue-main: #2a6f97;
+    --blue-dark: #013a63;
+    --green-main: #4caf50;
+    --text-dark: #1f2933;
+    --text-light: #ffffff;
+    --card-bg: #ffffff;
+    --card-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    --radius-card: 14px;
+    --radius-btn: 999px;
+    --max-width: 1100px;
+  }
+
+  body {
+    background: var(--bg-sand);
+    color: var(--text-dark);
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  .page {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 16px 40px;
+  }
+
+  /* HEADER */
+  .header {
+    background: linear-gradient(135deg, var(--blue-main), var(--blue-dark));
+    color: var(--text-light);
+    padding: 40px 20px;
+    border-radius: 0 0 18px 18px;
+    margin-bottom: 30px;
+  }
+
+  .header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+  }
+
+  .header p {
+    margin: 8px 0 0;
+    opacity: 0.9;
+  }
+
+  .hero-cta {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .btn {
+    padding: 10px 22px;
+    border-radius: var(--radius-btn);
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+  }
+
+  .btn-primary {
+    background: var(--green-main);
+    color: var(--text-light);
+  }
+
+  .btn-secondary {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-light);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+  }
+
+  /* SECTION HEADERS */
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-subtitle {
+    opacity: 0.8;
+    margin-bottom: 20px;
+  }
+
+  /* CARDS */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius-card);
+    padding: 18px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+  }
+
+  .card-body {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .card-tag {
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: var(--blue-main);
+    font-weight: 500;
+  }
+
+  /* BENEFITS */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .benefit {
+    background: #ffffffcc;
+    border-radius: var(--radius-card);
+    padding: 14px;
+    display: flex;
+    gap: 10px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .benefit-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+  }
+
+  /* ABOUT */
+  .about {
+    background: #ffffffdd;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+  }
+
+  .about h2 {
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .about-list {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 10px;
+  }
+
+  .about-item {
+    display: flex;
+    gap: 8px;
+  }
+
+  /* CONTACT */
+  .contact {
+    background: var(--blue-dark);
+    color: var(--text-light);
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: var(--card-shadow);
+  }
+
+  .contact h2 {
+    margin: 0 0 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 12px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 8px;
+  }
+
+  .contact-note {
+    margin-top: 12px;
+    opacity: 0.9;
+  }
+</style>
+
+<div class="page">
+  <!-- HEADER -->
+  <div class="header">
+    <h1>🧑‍🔧 Skagen Altmuligmand</h1>
+    <p>Din lokale partner til alt praktisk arbejde i Skagen og omegn.</p>
+
+    <div class="hero-cta">
+      <button class="btn btn-primary">📞 Få et tilbud</button>
+      <button class="btn btn-secondary">📋 Se services</button>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <h2 class="section-title">🌿 Services</h2>
+  <div class="section-subtitle">
+    Alt fra havearbejde til flytning – én kontakt, mange løsninger.
+  </div>
+
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-header">🪓 Havearbejde</div>
+      <div class="card-body">
+        Professionel pleje af din have med græsslåning, beplantning, beskæring og vedligeholdelse.
+      </div>
+      <div class="card-tag">Perfekt til sommerhuse.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">🛠️ Handyman‑service</div>
+      <div class="card-body">
+        Reparationer, montering, installationer og praktiske opgaver i hjem og virksomhed.
+      </div>
+      <div class="card-tag">Fra småfix til større projekter.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">⚒️ Mindre Bygningsarbejde</div>
+      <div class="card-body">
+        Mindre bygningsarbejde, som reparation af hegn, bygning af terasser eller opførelse af skur
+        eller mindre renoveringsprojekter.
+      </div>
+      <div class="card-tag">Erfaring og kvalitet i alle opgaver.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">🚚 Flyttehjælp</div>
+      <div class="card-body">Pakning, løft, læsning og aflæsning – hurtigt og stressfrit.</div>
+      <div class="card-tag">Lokalt og længere væk.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">❄️ Snerydning</div>
+      <div class="card-body">Sikker snerydning af indkørsler, fortove og parkeringsområder.</div>
+      <div class="card-tag">Fast aftale eller efter behov.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">🔧 Udlejning af værktøj</div>
+      <div class="card-body">Lej kvalitetsværktøj uden at investere i dyrt udstyr.</div>
+      <div class="card-tag">Klar til afhentning.</div>
+    </div>
+  </div>
+
+  <!-- WHY CHOOSE US -->
+  <h2 class="section-title">⭐ Hvorfor vælge os?</h2>
+
+  <div class="benefits-grid">
+    <div class="benefit">
+      🧰
+      <div>
+        <div class="benefit-title">Erfaring</div>
+        Erfarne fagfolk med fokus på kvalitet.
+      </div>
+    </div>
+    <div class="benefit">
+      🤝
+      <div>
+        <div class="benefit-title">Kundetilfredshed</div>
+        Vi holder aftaler og leverer gode resultater.
+      </div>
+    </div>
+    <div class="benefit">
+      🕒
+      <div>
+        <div class="benefit-title">Fleksibilitet</div>
+        Vi tilpasser os dine behov og tidsplan.
+      </div>
+    </div>
+    <div class="benefit">
+      💸
+      <div>
+        <div class="benefit-title">Fair priser</div>
+        Gennemsigtige priser uden skjulte gebyrer.
+      </div>
+    </div>
+    <div class="benefit">
+      📍
+      <div>
+        <div class="benefit-title">Lokalt fokus</div>
+        Vi kender Skagen og lokalområdet.
+      </div>
+    </div>
+    <div class="benefit">
+      🌱
+      <div>
+        <div class="benefit-title">Miljøvenligt</div>
+        Bæredygtige metoder hvor det giver mening.
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <div class="about">
+    <h2>🧑‍🔧 Om os</h2>
+    <p>
+      <strong>Skagen Altmuligmand</strong> hjælper både private og virksomheder med alt fra
+      havearbejde og reparationer til flytning, snerydning og værktøjsudlejning.
+    </p>
+    <p>
+      Vores mission er enkel: <strong>At gøre din hverdag lettere – én opgave ad gangen.</strong>
+    </p>
+
+    <div class="about-list">
+      <div class="about-item">✅ Klar og ærlig rådgivning.</div>
+      <div class="about-item">📅 Aftaler der bliver overholdt.</div>
+      <div class="about-item">📍 Lokal ekspertise i Skagen.</div>
+      <div class="about-item">👤 Personlig kontaktperson.</div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div class="contact">
+    <h2>📞 Kontakt os</h2>
+
+    <div class="contact-grid">
+      <div class="contact-item">📱 Telefon: <strong>[Indsæt nummer]</strong></div>
+      <div class="contact-item">📧 Email: <strong>[Indsæt email]</strong></div>
+      <div class="contact-item">📍 Adresse: <strong>[Indsæt adresse]</strong></div>
+      <div class="contact-item">🌐 Website: <strong>[Indsæt website]</strong></div>
+      <div class="contact-item">🔗 Sociale medier: <strong>[Links]</strong></div>
+      <div class="contact-item">🕒 Åbningstider: <strong>[Tider]</strong></div>
+    </div>
+
+    <p class="contact-note">
+      Vi tilbyder løsninger til både private og erhverv. Kontakt os for et gratis tilbud.
+    </p>
+  </div>
+</div>

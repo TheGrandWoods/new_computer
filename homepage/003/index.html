@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="da">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NordVærktøj Udlejning – Skagen 9990</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="logo">NordVærktøj – Skagen</div>
+        <nav class="nav">
+          <a href="#tools">Værktøj</a>
+          <a href="#booking">Booking</a>
+          <a href="#contact">Kontakt</a>
+          <a href="#admin">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1>Værktøjsudlejning i Skagen (9990)</h1>
+          <p>Lej professionelt værktøj til fair priser i hele Nordjylland.</p>
+          <a href="#tools" class="btn-primary">Se værktøj</a>
+        </div>
+      </section>
+
+      <section id="tools" class="section">
+        <div class="container">
+          <h2>Tilgængeligt værktøj</h2>
+          <div id="toolList" class="card-grid"></div>
+        </div>
+      </section>
+
+      <section id="booking" class="section section-alt">
+        <div class="container">
+          <h2>Booking & prisberegner</h2>
+
+          <form id="bookingForm" class="contact-form">
+            <div class="form-row">
+              <label for="bookingTool">Vælg værktøj</label>
+              <select id="bookingTool" required></select>
+            </div>
+            <div class="form-row">
+              <label for="bookingName">Navn</label>
+              <input id="bookingName" required />
+            </div>
+            <div class="form-row">
+              <label for="bookingFrom">Fra dato</label>
+              <input id="bookingFrom" type="date" required />
+            </div>
+            <div class="form-row">
+              <label for="bookingTo">Til dato</label>
+              <input id="bookingTo" type="date" required />
+            </div>
+            <p id="bookingPrice" class="form-status"></p>
+            <button class="btn-primary">Book</button>
+            <p id="bookingStatus" class="form-status"></p>
+          </form>
+
+          <h3>Aktuelle bookinger</h3>
+          <div id="bookingList"></div>
+        </div>
+      </section>
+
+      <section id="contact" class="section">
+        <div class="container">
+          <h2>Kontakt os</h2>
+          <p>Vi holder til i Skagen (9990), Nordjylland.</p>
+
+          <form id="contactForm" class="contact-form">
+            <div class="form-row">
+              <label for="name">Navn</label>
+              <input id="name" required />
+            </div>
+            <div class="form-row">
+              <label for="email">Email</label>
+              <input id="email" type="email" required />
+            </div>
+            <div class="form-row">
+              <label for="message">Besked</label>
+              <textarea id="message" rows="4"></textarea>
+            </div>
+            <button class="btn-primary">Send</button>
+            <p id="formStatus" class="form-status"></p>
+          </form>
+        </div>
+      </section>
+
+      <section id="admin" class="section section-alt">
+        <div class="container">
+          <h2>Admin</h2>
+
+          <div id="loginBox" class="admin-login">
+            <p>Admin login (demo):</p>
+            <form id="loginForm" class="admin-form">
+              <div class="form-row">
+                <label for="adminPassword">Kodeord</label>
+                <input id="adminPassword" type="password" required />
+              </div>
+              <button class="btn-primary">Log ind</button>
+              <p id="loginStatus" class="form-status"></p>
+            </form>
+          </div>
+
+          <div id="adminPanel" class="admin-panel hidden">
+            <p>
+              Logget ind som admin. <button id="logoutBtn" class="btn-secondary">Log ud</button>
+            </p>
+
+            <h3>Tilføj / rediger værktøj</h3>
+            <form id="adminForm" class="admin-form">
+              <input type="hidden" id="editIndex" />
+
+              <div class="form-row">
+                <label for="toolName">Navn</label>
+                <input id="toolName" required />
+              </div>
+
+              <div class="form-row">
+                <label for="toolDesc">Beskrivelse</label>
+                <input id="toolDesc" required />
+              </div>
+
+              <div class="form-row">
+                <label for="toolPrice">Pris (kr/dag)</label>
+                <input id="toolPrice" type="number" required />
+              </div>
+
+              <div class="form-row">
+                <label for="toolImage">Billede (valgfrit)</label>
+                <input id="toolImage" type="file" accept="image/*" />
+              </div>
+
+              <button class="btn-primary">Gem</button>
+            </form>
+
+            <h3>Eksisterende værktøj</h3>
+            <div id="adminToolList"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> NordVærktøj Udlejning – Skagen 9990, Nordjylland</p>
+      </div>
+    </footer>
+
+    <script src="src/js/scripts.js"></script>
+  </body>
+</html>
