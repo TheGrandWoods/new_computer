@@ -1,0 +1,40 @@
+// ─────────────────────────────────────────────
+//  PLUGIN IMPORTS
+//  Clean, standardized, future‑proof
+// ─────────────────────────────────────────────
+
+ai        = {import:ai-text-plugin}          // AI text generation
+image     = {import:text-to-image-plugin}    // Text‑to‑image generation
+kv        = {import:kv-plugin}               // Key‑value storage
+remember  = {import:remember-plugin}         // Persistent memory
+
+
+// ─────────────────────────────────────────────
+//  GENERATOR METADATA
+//  Displayed in Perchance sidebar + SEO friendly
+// ─────────────────────────────────────────────
+
+title
+  AI Text & Image Generator
+
+description
+  A powerful AI‑driven generator capable of producing high‑quality text and images.
+  Includes persistent memory, key‑value storage, and plugin‑enhanced functionality
+  for advanced workflows, customization, and long‑term user interaction.
+
+author
+  Mosberg
+
+version
+  1.1.0
+
+
+// ─────────────────────────────────────────────
+//  OPTIONAL: INTERNAL TAGS (for future UI panels)
+// ─────────────────────────────────────────────
+
+tags
+  ai, generator, text, image, memory, kv, advanced, tools
+
+category
+  AI Utilities

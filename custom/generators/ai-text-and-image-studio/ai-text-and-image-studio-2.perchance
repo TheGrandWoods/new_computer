@@ -1,0 +1,24 @@
+ai          = {import:ai-text-plugin}          // AI text generation
+img         = {import:text-to-image-plugin}    // Text‑to‑image generation
+kv          = {import:kv-plugin}               // Key‑value storage
+remember    = {import:remember-plugin}         // Persistent memory
+fetch       = {import:super-fetch-plugin}      // Advanced HTTP client
+
+title
+  AI Text & Image Studio
+
+description
+  A full‑featured AI studio for text generation, image creation, prompt enhancement,
+  persistent memory, KV‑based user profiles, and advanced interactive panels.
+
+author
+  Mosberg
+
+version
+  1.1.0
+
+tags
+  ai, text, image, studio, kv, memory, advanced, tools
+
+category
+  AI Generators

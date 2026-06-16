@@ -1,0 +1,33 @@
+// ─────────────────────────────────────────────
+//  PLUGIN IMPORTS
+// ─────────────────────────────────────────────
+
+aiTextPlugin = {import:ai-text-plugin}
+textToImagePlugin = {import:text-to-image-plugin}
+kvPlugin        = {import:kv-plugin}
+rememberPlugin  = {import:remember-plugin}
+superFetch = {import:super-fetch-plugin}
+
+
+// ─────────────────────────────────────────────
+//  GENERATOR METADATA
+// ─────────────────────────────────────────────
+
+title
+  AI Text & Image Studio (Generator)
+
+description
+  A full-featured AI studio with text generation, image creation, prompt enhancement,
+  memory, KV-based user profiles, and advanced panels.
+
+author
+  Mosberg
+
+version
+  1.0.0
+
+tags
+  ai, text, image, plugin, kv, memory, advanced, studio
+
+category
+  AI Generators
