@@ -1,0 +1,15 @@
+// Grand Woods - Project Hub
+// https://perchance.org/grand-woods
+
+$meta
+  title = Grand Woods - Project Hub
+  description = The complete hub for all my Perchance plugins, generators, tools, and coding projects.
+  image = https://user-uploads.perchance.org/file/c4d5454a9df9368cfe8ef614e01206ae.jpg
+  header = Grand Woods - Project Hub
+  tags = Perchance, plugins, generators, tools, coding, project hub
+
+author
+  Grand Woods
+
+version
+  1.0.0

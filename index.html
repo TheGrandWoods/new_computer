@@ -1,112 +1,242 @@
-<!-- favicon -->
-<link rel="shortcut icon" href="src/images/computer.webp" type="image/x-icon" />
+<!-- ================================
+     GRAND WOODS — PROJECT HUB
+     A Perchance‑safe homepage
+================================ -->
 
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
-  rel="stylesheet"
-/>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- Main CSS and other styles -->
-<link rel="stylesheet" href="src/styles/main.css" />
+    <!-- Dynamic Metadata -->
+    <meta name="description" content="[$meta.description]" />
+    <meta name="keywords" content="[$meta.tags]" />
+    <meta name="author" content="[author]" />
+    <meta name="version" content="[version]" />
 
-<!-- Main JavaScript and other scripts -->
-<script src="src/scripts/main.js"></script>
+    <title>[$meta.title]</title>
 
-<!-- Main Content -->
-<div id="pc-wrapper" data-theme="light">
-  <!-- HERO -->
-  <div class="pc-hero">
-    <h1>Welcome to Your New Computer</h1>
-    <p>
-      Your Perchance-ready control center for software, diagnostics, and
-      customization.
-    </p>
-    <div>
-      <span class="pc-btn" onclick="pcScroll('#pc-software')">Software</span>
-      <span class="pc-btn" onclick="pcScroll('#pc-diagnostics')"
-        >Diagnostics</span
-      >
-      <span class="pc-btn" onclick="pcScroll('#pc-gallery')">PC Builds</span>
-      <span class="pc-btn" onclick="pcOpenSettings()">⚙ Settings</span>
-    </div>
-  </div>
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="https://user.uploads.dev/file/8c7563d0ece7c9ed36c8a83f8361a7a7.webp"
+      type="image/x-icon"
+    />
 
-  <!-- SOFTWARE -->
-  <h2 id="pc-software">Software Hub</h2>
-  <div class="pc-grid">
-    <div class="pc-card" onclick="pcOpen('https://ninite.com/')">
-      <h3>🧰 Essential Software</h3>
-      <p>Browsers, utilities, security tools.</p>
-    </div>
-    <div class="pc-card" onclick="pcOpen('https://code.visualstudio.com/')">
-      <h3>💻 Programming Tools</h3>
-      <p>VS Code, Git, SDKs.</p>
-    </div>
-    <div
-      class="pc-card"
-      onclick="pcOpen('https://store.steampowered.com/about/')"
-    >
-      <h3>🎮 Gaming Software</h3>
-      <p>Steam, drivers, overlays.</p>
-    </div>
-    <div class="pc-card" onclick="pcOpen('https://obsproject.com/')">
-      <h3>📡 Streaming Tools</h3>
-      <p>OBS, recording, overlays.</p>
-    </div>
-  </div>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: #f4f4f4;
+        color: #222;
+      }
 
-  <!-- DIAGNOSTICS -->
-  <h2 id="pc-diagnostics" style="margin-top: 40px">System Diagnostics</h2>
-  <div class="pc-diag-grid">
-    <div class="pc-diag-card">
-      CPU Usage: <span class="pc-diag-value" id="pc-cpu">0%</span>
-    </div>
-    <div class="pc-diag-card">
-      GPU Load: <span class="pc-diag-value" id="pc-gpu">0%</span>
-    </div>
-    <div class="pc-diag-card">
-      RAM Usage: <span class="pc-diag-value" id="pc-ram">0%</span>
-    </div>
-    <div class="pc-diag-card">
-      Temp: <span class="pc-diag-value" id="pc-temp">0°C</span>
-    </div>
-  </div>
-  <div style="margin-top: 10px">
-    <span class="pc-btn" onclick="pcRefreshDiag()">Refresh</span>
-  </div>
+      header {
+        background: linear-gradient(135deg, #2f4f2f, #3b6b3b);
+        color: white;
+        padding: 60px 20px;
+        text-align: center;
+      }
 
-  <!-- GALLERY -->
-  <h2 id="pc-gallery" style="margin-top: 40px">PC Build Showcase</h2>
-  <div class="pc-gallery-grid">
-    <div class="pc-build-card" data-cat="gaming">
-      <strong>RTX Gaming Beast</strong><br />
-      Ryzen 7 • RTX 4070 • 32GB DDR5
-    </div>
-    <div class="pc-build-card" data-cat="workstation">
-      <strong>Creator Workstation</strong><br />
-      i9 • 64GB RAM • RTX 4080
-    </div>
-    <div class="pc-build-card" data-cat="compact">
-      <strong>Mini-ITX Compact</strong><br />
-      Ryzen 5 • RTX 4060 • SFF Case
-    </div>
-  </div>
-</div>
+      header h1 {
+        margin: 0;
+        font-size: 3rem;
+        letter-spacing: 1px;
+      }
 
-<!-- SETTINGS PANEL -->
-<div class="pc-overlay" id="pc-overlay" onclick="pcCloseSettings()"></div>
-<div id="pc-settings-panel">
-  <h3>Settings</h3>
-  <label>Theme:</label>
-  <select id="pc-theme">
-    <option value="light">Light</option>
-    <option value="dark">Dark</option>
-    <option value="oled">OLED</option>
-  </select>
-  <br /><br />
-  <span class="pc-btn" onclick="pcApplySettings()">Apply</span>
-  <span class="pc-btn" onclick="pcCloseSettings()">Close</span>
-</div>
+      header p {
+        margin-top: 10px;
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
+
+      .section {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      .section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #2f4f2f;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition:
+          transform 0.15s ease,
+          box-shadow 0.15s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        font-size: 1.4rem;
+        color: #2f4f2f;
+      }
+
+      .card p {
+        font-size: 0.95rem;
+        opacity: 0.85;
+      }
+
+      .card a {
+        display: inline-block;
+        margin-top: 10px;
+        color: #2f4f2f;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      footer {
+        text-align: center;
+        padding: 30px;
+        margin-top: 40px;
+        background: #e8e8e8;
+        color: #444;
+        font-size: 0.9rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>🌲 Grand Woods</h1>
+      <p>
+        The complete hub for all my Perchance plugins, generators, tools, and
+        coding projects.
+      </p>
+    </header>
+
+    <!-- ============================
+     PLUGINS
+============================ -->
+    <section class="section">
+      <h2>🧩 Plugins</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Ultimate Generator Stats Plugin</h3>
+          <p>
+            Live stats, badges, timestamps, and analytics for any Perchance
+            generator.
+          </p>
+          <a
+            href="https://perchance.org/ultimate-generator-stats-plugin"
+            target="_blank"
+            >Open Plugin →</a
+          >
+        </div>
+
+        <div class="card">
+          <h3>AI Text Plugin</h3>
+          <p>AI‑powered text generation with advanced prompt controls.</p>
+          <a href="https://perchance.org/ai-text-plugin" target="_blank"
+            >Open Plugin →</a
+          >
+        </div>
+
+        <div class="card">
+          <h3>Text‑to‑Image Plugin</h3>
+          <p>Generate images directly inside Perchance using AI.</p>
+          <a href="https://perchance.org/text-to-image-plugin" target="_blank"
+            >Open Plugin →</a
+          >
+        </div>
+
+        <div class="card">
+          <h3>KV Storage Plugin</h3>
+          <p>
+            Persistent key‑value storage for user profiles, settings, and data.
+          </p>
+          <a href="https://perchance.org/kv-plugin" target="_blank"
+            >Open Plugin →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+     GENERATORS
+============================ -->
+    <section class="section">
+      <h2>🎲 Generators</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Tree Hustler 3D</h3>
+          <p>A 3D browser game prototype built inside Perchance.</p>
+          <a href="https://perchance.org/tree-hustler-3d" target="_blank"
+            >Play →</a
+          >
+        </div>
+
+        <div class="card">
+          <h3>Space Asteroid Breaker</h3>
+          <p>A space shooter with incremental upgrades and procedural waves.</p>
+          <a href="https://perchance.org/space-asteroid-breaker" target="_blank"
+            >Play →</a
+          >
+        </div>
+
+        <div class="card">
+          <h3>LPC Character Generator</h3>
+          <p>Full spritesheet generator with layers, palettes, and export.</p>
+          <a
+            href="https://perchance.org/lpc-character-generator"
+            target="_blank"
+            >Open →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================
+     TOOLS & PROJECTS
+============================ -->
+    <section class="section">
+      <h2>🛠 Tools & Coding Projects</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Perchance Homepage Builder</h3>
+          <p>A template system for building custom Perchance homepages.</p>
+          <a
+            href="https://perchance.org/mosberg-homepage-builder"
+            target="_blank"
+            >Open →</a
+          >
+        </div>
+
+        <div class="card">
+          <h3>Super Fetch API Tool</h3>
+          <p>Advanced HTTP requests inside Perchance with headers & JSON.</p>
+          <a href="https://perchance.org/super-fetch-plugin" target="_blank"
+            >Open →</a
+          >
+        </div>
+
+        <div class="card">
+          <h3>Upload & File Tools</h3>
+          <p>Upload images, JSON, spritesheets, and more into generators.</p>
+          <a href="https://perchance.org/upload-plugin" target="_blank"
+            >Open →</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer>© Grand Woods - 2026</footer>
+  </body>
+</html>
