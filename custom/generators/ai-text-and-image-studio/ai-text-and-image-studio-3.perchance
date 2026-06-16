@@ -5,7 +5,7 @@ remember        = {import:remember-plugin}           // Persistent memory
 fetch           = {import:super-fetch-plugin}        // API calls
 
 // Custom Dexie storage layer (created by us)
-dexie           = {import:dexie-storage-plugin}      // Local DB for settings, history
+dexie           = {import:dexie-plugin}      // Local DB for settings, history
 
 title
   AI Text & Image Studio (Plugin Edition)

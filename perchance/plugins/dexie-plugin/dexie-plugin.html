@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Dexie Plugin</title>
+</head>
+<body style="text-align:left; padding:2rem; font-family:system-ui, sans-serif;">
+
+  <h2>Custom Dexie Plugin</h2>
+  <p>Simulates Dexie using KV namespaces + JSON arrays.</p>
+
+  <button onclick="runDemo()" style="padding:0.5rem 1rem; cursor:pointer;">Run Demo</button>
+  <pre id="outputEl" style="background:#f5f5f5; padding:1rem; border-radius:4px; min-height:2rem; white-space:pre-wrap;"></pre>
+
+  <script>
+    // ─────────────────────────────────────────────
+    //  CUSTOM DEXIE PLUGIN (Perchance-Native)
+    // ─────────────────────────────────────────────
+
+    let dexie = {
+      async init(db, store) {
+        let key = db + "_" + store;
+        await kv.dexie_meta.set(key, []);
+      },
+
+      async put(db, store, value) {
+        let key = db + "_" + store;
+        let arr = await kv.dexie_meta.get(key) || [];
+        arr.push(value);
+        await kv.dexie_meta.set(key, arr);
+      },
+
+      async getAll(db, store) {
+        let key = db + "_" + store;
+        let existing = await kv.dexie_meta.get(key);
+        return existing || [];
+      },
+
+      async clear(db, store) {
+        let key = db + "_" + store;
+        await kv.dexie_meta.set(key, []);
+      }
+    };
+
+    async function runDemo() {
+      outputEl.textContent = "Running...";
+      await dexie.init("testDb", "testStore");
+      await dexie.put("testDb", "testStore", {id: 1, name: "Alice"});
+      await dexie.put("testDb", "testStore", {id: 2, name: "Bob"});
+      let all = await dexie.getAll("testDb", "testStore");
+      outputEl.textContent = "getAll result:\n" + JSON.stringify(all, null, 2);
+    }
+  </script>
+
+</body>
+</html>

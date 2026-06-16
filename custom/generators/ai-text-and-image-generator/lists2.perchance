@@ -8,7 +8,6 @@ kv        = {import:kv-plugin}
 remember  = {import:remember-plugin}
 dexie     = {import:dexie-plugin}
 fetch     = {import:super-fetch-plugin}
-theme     = {import:theme-plugin}
 
 
 // ─────────────────────────────────────────────
